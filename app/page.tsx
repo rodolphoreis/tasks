@@ -1,4 +1,5 @@
 import NavBar from "@/src/components/navBar";
+import HomePage from "../src/components/home";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <NavBar />
       </header>
       <main>
-        <h1>Olá Mundo</h1>
+        <HomePage />
       </main>
     </>
   );
