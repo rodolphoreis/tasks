@@ -16,7 +16,7 @@ const Login = () => {
         </div>
 
         <div className={styles.container_login}>
-          <h1 className={styles.title}>Entrar</h1>
+          <h1 className={styles.title}>Login</h1>
           <button className={styles.button}>
             {" "}
             <FcGoogle /> Entrar com o Google
@@ -27,6 +27,19 @@ const Login = () => {
             <span className={styles.text}>ou</span>
             <span className={styles.line}></span>
           </div>
+          <form>
+            <label>
+              <span className={styles.span}>Email</span>
+              <input type="email" />
+            </label>
+            <label>
+              <span className={styles.span}>Senha</span>
+              <input type="password" />
+            </label>
+            <button type="submit" className={styles.button_submit}>
+              Entrar
+            </button>
+          </form>
         </div>
       </div>
     </>
