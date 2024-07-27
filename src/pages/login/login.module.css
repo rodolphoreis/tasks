@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container_logo {
+  background: #49708a;
+  padding: 0px 40px;
+  height: 80px;
+}
+
+.logo {
+  color: #ebf7f8;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.more {
+  color: #caff42;
+  font-size: 38px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #fff;
+  margin: 0 10px;
+}
+
+.text {
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.container_login {
+  background: #49708a;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #caff42;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: #d0e0eb;
+  color: #49708a;
+  border: none;
+  padding: 10px 20px;
+  margin: 30px auto;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.5s;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  min-width: 35%;
+}
+
+.button:hover {
+  background-color: #caff42;
+  color: #d0e0eb;
+}
