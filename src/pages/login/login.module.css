@@ -16,6 +16,12 @@
   font-weight: bold;
   text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
 
 .more {
   color: #caff42;
@@ -23,6 +29,12 @@
   text-decoration: none;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .more {
+    font-size: 29px;
+    font-weight: 600;
+  }
 }
 
 .divider {
@@ -49,7 +61,7 @@
 
 .container_login {
   background: #49708a;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 79px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +81,7 @@
   color: #49708a;
   border: none;
   padding: 10px 20px;
-  margin: 30px auto;
+  margin: 30px auto 80px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -78,10 +90,59 @@
   justify-content: center;
   align-items: center;
   width: 40%;
-  min-width: 35%;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    padding: 10px 10px;
+    font-size: 15px;
+    margin: 20px auto 40px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .button {
+    width: 85%;
+    padding: 10px 6px;
+    font-size: 12px;
+    margin: 10px auto 20px;
+    margin-bottom: 50px;
+  }
 }
 
 .button:hover {
   background-color: #caff42;
   color: #d0e0eb;
+}
+
+.span {
+  margin-bottom: 10px;
+  color: #caff42;
+}
+
+.button_submit {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #2d3237;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+  .button_submit {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.button_submit:hover {
+  background-color: #caff42;
+  color: #2d3237;
 }
