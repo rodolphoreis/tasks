@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  margin: 0;
+  background: #88abc2;
+}
+
+.container_video {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container_title {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 28px;
+  font-weight: bolder;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(92, 92, 92, 0.79);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 23px;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 468px) {
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.subtitle {
+  color: #ebf7f8;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  text-shadow: 1px 2px 2px rgba(92, 92, 92, 0.79);
+}
+@media screen and (max-width: 468px) {
+  .subtitle {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.container_buttons {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+.button {
+  background: #2d3237;
+  color: #ebf7f8;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .button {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.button:hover {
+  background: #caff42;
+  color: #2d3237;
+}
