@@ -10,7 +10,9 @@ const NavBar = () => {
             Tasks <span className={styles.more}>+</span>
           </h1>
         </Link>
-        <button className={styles.button}>Logar</button>
+        <Link href="/login" className={styles.button}>
+          Logar
+        </Link>
       </div>
     </header>
   );
