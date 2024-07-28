@@ -10,9 +10,14 @@ const NavBar = () => {
             Tasks <span className={styles.more}>+</span>
           </h1>
         </Link>
-        <Link href="/login" className={styles.button}>
-          Minha Conta
-        </Link>
+        <div className={styles.container_button}>
+          <Link href="/dashboard" className={styles.button}>
+            Dashboard
+          </Link>
+          <Link href="/login" className={styles.button}>
+            Minha Conta
+          </Link>
+        </div>
       </div>
     </header>
   );
