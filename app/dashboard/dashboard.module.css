@@ -1,0 +1,9 @@
+.container {
+  background-color: blue;
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+.title {
+  margin: 0;
+  padding: 0;
+}
