@@ -45,13 +45,19 @@
   }
 }
 
+.container_button {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .button {
   background: #caff42;
   color: #49708a;
   border: none;
   padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 800;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.5s;
