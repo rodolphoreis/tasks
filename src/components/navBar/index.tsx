@@ -1,12 +1,7 @@
-"use client";
-
-import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import styles from "./nav.module.css";
 
 const NavBar = () => {
-  const { data: session, status } = useSession();
-
   return (
     <header className={styles.container}>
       <div className={styles.section}>
@@ -23,13 +18,6 @@ const NavBar = () => {
             Minha Conta
           </Link>
         </div>
-        {status === "loading" ? (
-          <></>
-        ) : session ? (
-          <button onClick={() => signOut()}>Olá {session?.user?.name}</button>
-        ) : (
-          <button onClick={() => signIn("google")}>Entrar</button>
-        )}
       </div>
     </header>
   );
