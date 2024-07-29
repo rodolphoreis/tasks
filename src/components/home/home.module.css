@@ -9,7 +9,7 @@
 }
 
 .container_video {
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: center;
