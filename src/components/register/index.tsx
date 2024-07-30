@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styles from "./Register.module.css";
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
+import register from "@/app/(auth)/register/_actions/register";
 
 interface RegisterProps {
   onRegister: (name: string, email: string, password: string) => void;
@@ -14,14 +15,9 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onRegister(name, email, password);
-  };
-
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form action={register} className={styles.form}>
         <div className={styles.container_title}>
           <FaUser className={styles.icon} />
           <div>
