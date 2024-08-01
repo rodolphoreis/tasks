@@ -4,7 +4,10 @@ import { compareSync } from "bcrypt";
 
 import db from "@/src/lib/db";
 
-export default NextAuth({
+export const {
+  handlers: { GET, POST },
+  auth,
+} = NextAuth({
   providers: [
     CredentialsProvider({
       credentials: {
