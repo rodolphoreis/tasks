@@ -1,31 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+
 import { FcGoogle } from "react-icons/fc";
 import styles from "./login.module.css";
 import Link from "next/link";
+import login from "@/app/(auth)/login/_actions/login";
 
 interface LoginProps {
   onLogin: (email: string, password: string) => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onLogin(email, password);
-  };
-
-  const handleGoogleLogin = () => {
-    // Aqui você pode implementar a lógica para login com Google
-    console.log("Login com Google");
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.container_login}>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form action={login} className={styles.form}>
           <h1 className={styles.title}>Login</h1>
           <div className={styles.field}>
             <label htmlFor="email" className={styles.label}>
@@ -35,8 +24,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               type="email"
               id="email"
               name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               placeholder="Seu email"
               className={styles.input}
               required
@@ -50,8 +37,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               type="password"
               id="password"
               name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               placeholder="Sua senha"
               className={styles.input}
               required
@@ -69,7 +54,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <div className={styles.line_or}>ou</div>
             <div className={styles.line}></div>
           </div>
-          <button className={styles.button_google} onClick={handleGoogleLogin}>
+          <button type="submit" className={styles.button_google}>
             <FcGoogle /> Entrar com o Google
           </button>
         </form>
