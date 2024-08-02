@@ -14,7 +14,7 @@ const NavBar = () => {
           <Link href="/dashboard" className={styles.button}>
             Dashboard
           </Link>
-          <Link href="/api/auth/signin" className={styles.button}>
+          <Link href="/login" className={styles.button}>
             Minha Conta
           </Link>
         </div>
