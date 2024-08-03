@@ -4,17 +4,45 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import styles from "./login.module.css";
 import Link from "next/link";
-import login from "@/app/(auth)/login/_actions/login";
+
+import { signIn } from "next-auth/react";
 
 interface LoginProps {
   onLogin: (email: string, password: string) => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
+  const [error, setError] = React.useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+      callbackUrl: "/dashboard",
+    });
+
+    if (result?.error) {
+      if (result.error === "CredentialsSignin") {
+        setError("Login e/ou senha inválidos");
+      } else {
+        setError("Ocorreu um erro inesperado");
+      }
+    } else {
+      window.location.href = "/dashboard";
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.container_login}>
-        <form action={login} className={styles.form}>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <h1 className={styles.title}>Login</h1>
           <div className={styles.field}>
             <label htmlFor="email" className={styles.label}>
@@ -42,6 +70,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               required
             />
           </div>
+          {error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.button}>
             Entrar
           </button>
