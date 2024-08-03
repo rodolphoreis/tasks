@@ -2,11 +2,14 @@
 import Login from "@/src/components/login";
 import React from "react";
 
+import { useSession } from "next-auth/react";
+
 const LoginPage: React.FC = () => {
   const handleLogin = (email: string, password: string) => {
     console.log("Registrando usuário:", { email, password });
   };
-
+  const session = useSession();
+  console.log(session);
   return (
     <div>
       <Login onLogin={handleLogin} />
