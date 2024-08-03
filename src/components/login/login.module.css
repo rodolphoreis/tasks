@@ -197,3 +197,14 @@
   margin: 0 10px;
   color: #fff;
 }
+
+.error {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid red;
+  padding: 10px 20px;
+  border-radius: 7px;
+}
