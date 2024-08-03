@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../src/styles/globals.css";
 
+import { SessionProvider } from "next-auth/react";
+
 import NavBar from "@/src/components/navBar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,8 +24,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className={inter.className}>
-        <NavBar />
-        {children}
+        <SessionProvider>
+          <NavBar />
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
