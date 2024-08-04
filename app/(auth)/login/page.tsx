@@ -12,8 +12,12 @@ const LoginPage: React.FC = () => {
   const handleLogin = (email: string, password: string) => {
     console.log("Registrando usuário:", { email, password });
   };
-  const session = useSession();
-  console.log(session);
+
+  if (session && session.status === "authenticated") {
+    router.push("/dashboard");
+  }
+  console.log("Registrando usuário", { session });
+
   return (
     <div>
       <Login onLogin={handleLogin} />
