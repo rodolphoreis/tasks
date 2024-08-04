@@ -49,6 +49,8 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
@@ -62,6 +64,9 @@
   border-radius: 4px;
   transition: all 0.5s;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   .button {
@@ -75,4 +80,14 @@
   border: 1px solid #ebf7f8;
   background: none;
   color: #caff42;
+}
+
+.button_image {
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
 }
