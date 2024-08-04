@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./nav.module.css";
+import { signOut, useSession } from "next-auth/react";
 
 const NavBar = () => {
   return (
