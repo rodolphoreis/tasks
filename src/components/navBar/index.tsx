@@ -13,13 +13,22 @@ const NavBar = () => {
             Tasks <span className={styles.more}>+</span>
           </h1>
         </Link>
+
         <div className={styles.container_button}>
-          <Link href="/dashboard" className={styles.button}>
-            Dashboard
-          </Link>
-          <Link href="/login" className={styles.button}>
-            Minha Conta
-          </Link>
+          {session?.user && (
+            <Link href="/dashboard" className={styles.button}>
+              Dashboard
+            </Link>
+          )}
+          {session?.user ? (
+            <button className={styles.button} onClick={() => signOut()}>
+              Olá {session?.user?.name}
+            </button>
+          ) : (
+            <Link href="/login" className={styles.button}>
+              Minha Conta
+            </Link>
+          )}
         </div>
       </div>
     </header>
