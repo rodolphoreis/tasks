@@ -4,6 +4,7 @@ import styles from "./nav.module.css";
 import { signOut, useSession } from "next-auth/react";
 
 const NavBar = () => {
+  const { data: session, status } = useSession();
   return (
     <header className={styles.container}>
       <div className={styles.section}>
