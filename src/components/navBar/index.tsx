@@ -29,6 +29,13 @@ const NavBar = () => {
               Minha Conta
             </Link>
           )}
+          {session?.user?.image && (
+            <img
+              className={styles.button_image}
+              src={session?.user?.image}
+              alt="imagem"
+            />
+          )}
         </div>
       </div>
     </header>
