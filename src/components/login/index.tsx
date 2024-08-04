@@ -6,6 +6,7 @@ import styles from "./login.module.css";
 import Link from "next/link";
 
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface LoginProps {
   onLogin: (email: string, password: string) => void;
@@ -13,6 +14,7 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [error, setError] = React.useState("");
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -35,7 +37,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         setError("Ocorreu um erro inesperado");
       }
     } else {
-      window.location.href = "/dashboard";
+      router.push("/dashboard");
     }
   };
 
@@ -83,7 +85,11 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <div className={styles.line_or}>ou</div>
             <div className={styles.line}></div>
           </div>
-          <button type="submit" className={styles.button_google}>
+          <button
+            type="submit"
+            className={styles.button_google}
+            onClick={() => signIn("google")}
+          >
             <FcGoogle /> Entrar com o Google
           </button>
         </form>
