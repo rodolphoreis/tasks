@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compareSync } from "bcrypt";
 
 import db from "@/src/lib/db";
+import GoogleProvider from "next-auth/providers/google";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -35,6 +36,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return null;
         }
       },
+    }),
+    GoogleProvider({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
 });
