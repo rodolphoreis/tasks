@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const LoginPage: React.FC = () => {
+  const session = useSession();
   const handleLogin = (email: string, password: string) => {
     console.log("Registrando usuário:", { email, password });
   };
