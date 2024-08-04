@@ -3,6 +3,7 @@ import Login from "@/src/components/login";
 import React from "react";
 
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginPage: React.FC = () => {
   const handleLogin = (email: string, password: string) => {
