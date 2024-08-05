@@ -1,10 +1,14 @@
-import { useState } from "react";
+"use client";
+
+import { HTMLProps, useState } from "react";
 import styles from "./textarea.module.css";
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
-const Textarea: React.FC<TextareaProps> = ({ ...req }) => {
+const Textarea: React.FC<TextareaProps> = ({
+  ...rest
+}: HTMLProps<HTMLTextAreaElement>) => {
   const [input, setInput] = useState<string>("");
 
   const handleTextareaChange = (
@@ -21,7 +25,7 @@ const Textarea: React.FC<TextareaProps> = ({ ...req }) => {
         placeholder="Texto"
         className={styles.textarea}
         onChange={handleTextareaChange}
-        {...req}
+        {...rest}
       ></textarea>
     </>
   );
