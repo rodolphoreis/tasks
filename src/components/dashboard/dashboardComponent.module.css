@@ -1,0 +1,47 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.content {
+  width: 100%;
+  max-width: 1200px;
+}
+.contentForm {
+  width: 85%;
+  max-width: 1280px;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+.contentForm h1 {
+  margin: 0;
+  color: white;
+}
+
+.form {
+  margin: 10px;
+  display: flex;
+}
+
+.checkboxArea {
+  display: flex;
+  align-items: center;
+  align-self: start;
+  margin-bottom: 20px;
+}
+.checkboxArea input {
+  width: 20px;
+  margin-right: 13px;
+}
+
+.checkboxArea label {
+  margin-left: 0px;
+  font-size: 14px;
+  color: white;
+}
