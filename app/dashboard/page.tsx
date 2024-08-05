@@ -2,6 +2,7 @@ import styles from "./dashboard.module.css";
 import "../../src/styles/globals.css";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+import DashboardComponent from "@/src/components/dashboard";
 
 export const metadata = {
   title: "Tasks - Dashboard",
@@ -17,7 +18,7 @@ const Dashboard = async () => {
   return (
     <>
       <div className={styles.container}>
-        <h2 className={styles.title}>dashboard</h2>
+        <DashboardComponent />
       </div>
     </>
   );
