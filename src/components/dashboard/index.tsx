@@ -3,6 +3,7 @@
 import { FiShare2 } from "react-icons/fi";
 import Textarea from "../textarea";
 import styles from "./dashboardComponent.module.css";
+import { FaTrash } from "react-icons/fa";
 
 const DashboardComponent = () => {
   const handleSubmit = (event: React.FormEvent) => {
@@ -33,14 +34,27 @@ const DashboardComponent = () => {
               <label className={styles.tag}>PUBLICO</label>
               <button className={styles.shareButton}>
                 <FiShare2 size={22} color="#3183ff" />
-                Compartilhar
               </button>
             </div>
             <div className={styles.taskContent}>
               <p>Minha primeira tarefa de exemplo</p>
+              <button className={styles.trashButton}>
+                <FaTrash size={18} color="#ea3140" />
+              </button>
+            </div>
+          </article>
+
+          <article className={styles.task}>
+            <div className={styles.tagContainer}>
+              <label className={styles.tag}>PUBLICO</label>
               <button className={styles.shareButton}>
-                <FiShare2 size={22} color="#ea3140" />
-                Compartilhar
+                <FiShare2 size={22} color="#3183ff" />
+              </button>
+            </div>
+            <div className={styles.taskContent}>
+              <p>Minha primeira tarefa de exemplo</p>
+              <button className={styles.trashButton}>
+                <FaTrash size={18} color="#ea3140" />
               </button>
             </div>
           </article>
