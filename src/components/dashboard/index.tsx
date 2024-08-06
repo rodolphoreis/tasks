@@ -19,7 +19,9 @@ const DashboardComponent = () => {
                 <input type="checkbox" className={styles.checkbox} />
                 <label>Deixar tarefa pública? </label>
               </div>
-              <button type="submit">Adicionar tarefa</button>
+              <button type="submit" className={styles.button}>
+                Adicionar tarefa
+              </button>
             </form>
           </div>
         </section>
