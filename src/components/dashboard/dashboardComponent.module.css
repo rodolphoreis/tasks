@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   align-self: start;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 }
 .checkboxArea input {
   width: 20px;
@@ -42,6 +42,26 @@
 
 .checkboxArea label {
   margin-left: 0px;
+  margin-bottom: 0px;
   font-size: 14px;
+  color: white;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  background-color: #caff42;
+  color: rgb(68, 68, 68);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: all 0.8s;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: #424240;
   color: white;
 }
