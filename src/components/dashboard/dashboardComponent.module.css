@@ -21,7 +21,8 @@
 }
 .contentForm h1 {
   margin: 0;
-  color: white;
+  font-size: 32px;
+  color: rgb(0, 0, 0);
 }
 
 .form {
@@ -65,4 +66,78 @@
 .button:hover {
   background-color: #424240;
   color: white;
+}
+
+.taskContainer {
+  margin: 0 auto;
+  padding: 0 18px;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.taskContainer a {
+  text-decoration: none;
+  color: "#0f0f0f";
+}
+
+.taskContainer h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.task {
+  width: 72%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  line-height: 150%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto 30px auto;
+}
+
+.tagContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.tag {
+  background-color: #308af7;
+  padding: 2px 6px;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.shareButton {
+  background-color: transparent;
+  border: 0;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.taskContent p {
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+.trashButton {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0 8px;
 }
