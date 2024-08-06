@@ -43,21 +43,6 @@ const DashboardComponent = () => {
               </button>
             </div>
           </article>
-
-          <article className={styles.task}>
-            <div className={styles.tagContainer}>
-              <label className={styles.tag}>PUBLICO</label>
-              <button className={styles.shareButton}>
-                <FiShare2 size={22} color="#3183ff" />
-              </button>
-            </div>
-            <div className={styles.taskContent}>
-              <p>Minha primeira tarefa de exemplo</p>
-              <button className={styles.trashButton}>
-                <FaTrash size={18} color="#ea3140" />
-              </button>
-            </div>
-          </article>
         </section>
       </main>
     </>
