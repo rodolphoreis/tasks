@@ -23,6 +23,15 @@ type DashboardComponentProps = {
   session: Session;
 };
 
+interface TaskProps {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  public: boolean;
+  task: string;
+  userId: string;
+}
+
 const DashboardComponent = ({ session }: DashboardComponentProps) => {
   const [input, setInput] = useState<string>("");
   const [publicTask, setPublicTask] = useState<boolean>(false);
