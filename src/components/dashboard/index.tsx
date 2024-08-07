@@ -36,6 +36,31 @@ const DashboardComponent = ({ session }: DashboardComponentProps) => {
   const [input, setInput] = useState<string>("");
   const [publicTask, setPublicTask] = useState<boolean>(false);
   const [tasks, setTasks] = useState<TaskProps[]>([]);
+  useEffect(() => {
+    async function loadTask() {
+      const taskRef = await collection(db, "tarefas");
+      const q = query(
+        taskRef,
+        where("userId", "==", session.user?.email),
+        orderBy("createdAt", "desc")
+      );
+      onSnapshot(q, (snapshot) => {
+        let lista = [] as TaskProps[];
+        snapshot.forEach((doc) => {
+          lista.push({
+            id: doc.id,
+            createdAt: doc.data().createdAt,
+            updatedAt: doc.data().updatedAt,
+            public: doc.data().public,
+            task: doc.data().tarefa,
+            userId: doc.data().userId,
+          });
+        });
+        setTasks(lista);
+      });
+    }
+    loadTask();
+  }, [session.user?.email]);
 
   const handleRegisterTask = async (event: FormEvent) => {
     event.preventDefault();
