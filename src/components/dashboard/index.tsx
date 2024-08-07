@@ -35,6 +35,7 @@ interface TaskProps {
 const DashboardComponent = ({ session }: DashboardComponentProps) => {
   const [input, setInput] = useState<string>("");
   const [publicTask, setPublicTask] = useState<boolean>(false);
+  const [tasks, setTasks] = useState<TaskProps[]>([]);
 
   const handleRegisterTask = async (event: FormEvent) => {
     event.preventDefault();
