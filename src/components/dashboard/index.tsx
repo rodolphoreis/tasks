@@ -6,7 +6,7 @@ import { FaTrash } from "react-icons/fa";
 import Textarea from "../textarea";
 import styles from "./dashboardComponent.module.css";
 import { db } from "../../services/firebaseConection";
-import { addDoc, collection } from "firebase/firestore";
+import Link from "next/link";
 
 type User = {
   name: string;
