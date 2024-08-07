@@ -1,11 +1,20 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { FiShare2 } from "react-icons/fi";
 import { FaTrash } from "react-icons/fa";
 import Textarea from "../textarea";
 import styles from "./dashboardComponent.module.css";
 import { db } from "../../services/firebaseConection";
+import {
+  addDoc,
+  collection,
+  query,
+  orderBy,
+  where,
+  onSnapshot,
+} from "firebase/firestore";
+
 import Link from "next/link";
 
 type User = {
@@ -36,6 +45,7 @@ const DashboardComponent = ({ session }: DashboardComponentProps) => {
   const [input, setInput] = useState<string>("");
   const [publicTask, setPublicTask] = useState<boolean>(false);
   const [tasks, setTasks] = useState<TaskProps[]>([]);
+
   useEffect(() => {
     async function loadTask() {
       const taskRef = await collection(db, "tarefas");
@@ -74,6 +84,8 @@ const DashboardComponent = ({ session }: DashboardComponentProps) => {
         updatedAt: new Date(),
         userId: session.user?.email || "",
       });
+      setInput("");
+      setPublicTask(false);
     } catch (error) {
       console.log(error);
     }
@@ -111,20 +123,31 @@ const DashboardComponent = ({ session }: DashboardComponentProps) => {
       </section>
       <section className={styles.taskContainer}>
         <h1>Minhas Tarefas</h1>
-        <article className={styles.task}>
-          <div className={styles.tagContainer}>
-            <label className={styles.tag}>PUBLICO</label>
-            <button className={styles.shareButton}>
-              <FiShare2 size={22} color="#3183ff" />
-            </button>
-          </div>
-          <div className={styles.taskContent}>
-            <p>Minha primeira tarefa de exemplo</p>
-            <button className={styles.trashButton}>
-              <FaTrash size={18} color="#ea3140" />
-            </button>
-          </div>
-        </article>
+        {tasks.map((task) => (
+          <article className={styles.task} key={task.id}>
+            {task.public && (
+              <div className={styles.tagContainer}>
+                <label className={styles.tag}>PUBLICO</label>
+                <button className={styles.shareButton}>
+                  <FiShare2 size={22} color="#3183ff" />
+                </button>
+              </div>
+            )}
+
+            <div className={styles.taskContent}>
+              {task.public ? (
+                <Link href={`/task/${task.id}`}>
+                  <p className={styles.link_task}>{task.task}</p>
+                </Link>
+              ) : (
+                <p className={styles.link_task}>{task.task}</p>
+              )}
+              <button className={styles.trashButton}>
+                <FaTrash size={18} color="#ea3140" />
+              </button>
+            </div>
+          </article>
+        ))}
       </section>
     </main>
   );
